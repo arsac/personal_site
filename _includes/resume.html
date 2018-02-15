@@ -1,0 +1,126 @@
+<div id="resume">
+    <div class="grid-x">
+        <section id="summary" class="cell section">
+            <h3 class="section-title">Summary</h3>
+            <img id= "profile-image"src="/assets/img/profile-bw.png"/>
+            <p>{{ include.resume.summary }}</p>
+        </section>
+    </div>
+    <div class="grid-x">
+    <section id="experience" class="cell medium-auto section">
+        <h3 class="section-title">Work Experience</h3>
+        <div id="experience-wrapper" class="section-body">
+
+            {% for position in include.resume.positions %}
+            <div class="experience section-body-item">
+                <div class="experience-wrapper">
+
+
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell medium-auto">
+                            <div class="company"><strong>{{ position.company }}</strong></div>
+                            <br>
+                            <span class="subheader">{{ position.title }}</span>
+                            <p>{{ position.summary }}</p>
+
+                        </div>
+                        <div class="cell medium-shrink text-right">
+                            <span class="location subheader"><i class="fa fa-map-marker"></i>&nbsp;{{ position.location }}</span><br/>
+                            <small><em><span class="start-date">{{ position.start_date }}</span> - <span class="end-date">{{ position.end_date }}</span></em></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+    </div>
+
+    <div class="grid-x grid-margin-x">
+        <section id="skills" class="cell section">
+            <h3 class="section-title">Stack Highlights</h3>
+            <div class="grid-x grid-margin-x">
+                {% for section in include.resume.skills %}
+                <div class="section-body-item cell {% if forloop.last %}medium-shrink{% else %}medium-auto{% endif %}">
+                    <h4 class="skill-section">{{ section[0] }}</h4>
+                    <dl class="skills-list">
+                        {% for skill in section[1] %}
+                        <dt>{{ skill.name }}</dt>
+                        <dd>
+                            {% for num in (1..10) %}
+                            {% if skill.lvl >= num %}
+                            <i class="fa fa-circle"></i>
+                            {% else %}
+                            <i class="fa fa-circle-o"></i>
+                            {% endif %}
+                            {% endfor %}
+                        </dd>
+                        {% endfor %}
+                    </dl>
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+
+        </section>
+    </div>
+
+    <div class="grid-x">
+        <section id="certifications" class="cell medium-6 section">
+            <h3 class="section-title">Certifications</h3>
+            <div class="section-body">
+                {% for certification in include.resume.certifications %}
+                <div class="section-body-item">
+                    <strong>{{ certification.issuer }}</strong>
+                    <br>
+                    <span class="subheader">{{ certification.title }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="recognition" class="cell medium-6 section">
+            <h3 class="section-title">Recognition</h3>
+            <div class="section-body">
+                {% for award in include.resume.honors_awards %}
+                <div class="section-body-item">
+                    <strong>{{ award.year }} - {{ award.issuer }}</strong>
+                    <br>
+                    <span class="subheader">{{ award.award }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+    <div class="grid-x">
+        <section id="education" class="cell medium-6 section">
+            <h3 class="section-title">Education</h3>
+            <div class="section-body">
+            {% for education in include.resume.educations %}
+                <div class="section-body-item">
+                    <strong>{{ education.school }}</strong>
+                    <br>
+                    <span class="subheader">{{ education.end_date }}</span> - {{ education.degree }}
+                </div>
+            {% endfor %}
+            </div>
+        </section>
+        <section id="language" class="cell medium-6 section">
+            <h3 class="section-title">Languages</h3>
+            <div class="section-body">
+            {% for language in include.resume.languages %}
+                <div class="section-body-item">
+                    <strong>{{ language.name }}</strong>
+                    <br>
+                    <span class="subheader">{{ language.proficiency }}</span>
+                </div>
+            {% endfor %}
+            </div>
+        </section>
+    </div>
+
+</div>

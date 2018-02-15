@@ -1,0 +1,355 @@
+.project-fields {
+	margin-left: 1em;
+	.badge {
+		font-family: $font-family-sans-serif;
+	
+		//font-weight: normal !important;
+	}
+}
+
+.project-tags {
+	border-top: 1px dotted $gray-lighter;
+	border-bottom: 1px dotted $gray-lighter;
+	padding: 1em 0;
+	margin: 1em 0 2em 0;
+	line-height: 2;
+}
+
+.project-behance-link {
+	margin-top: 2em;
+}
+.project-image {
+	margin-bottom: 1em;
+}
+.modal-header {
+	border-bottom: 1px dotted $text-muted;
+}
+.portfolio .modal {
+	.modal-title {
+		text-transform: uppercase;
+	}
+	.modal-body {
+		margin-bottom: 1em;
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			max-width: 100%;
+		}
+	}
+}
+
+
+
+
+
+$project-description-width: 460px;
+
+$project-image-width: 404px;
+$project-image-height: 316px;
+
+$project-image-ratio: $project-image-height / $project-image-width;
+
+$project-box-margin: 6px;
+
+
+$project-box-width: floor((($container-md - $grid-gutter-width)/ 2 ) + ($project-box-margin / 2));
+$project-box-height: floor($project-box-width * $project-image-ratio);
+
+
+.portfolio {
+	#main {
+		//padding-left: 0;
+		//padding-right: 0;
+		padding-right: floor($grid-gutter-width / 2) - $project-box-margin;
+	}
+}
+
+
+
+@mixin small-project($height,$width) {
+	height: $height / 2;
+	width: $width / 2;
+	
+	.project-info {
+		h2 {
+			font-size: 1.4em;
+		}
+	
+	}
+}
+
+@mixin project-color($color) {
+	.project-info {
+		background: rgba($color,.7);
+		vertical-align: middle;
+		
+		@include text-shadow(1px -1px 1px rgba(darken($color,20%), .7));
+		
+	}
+	
+}
+
+
+@mixin small-wide-project($height,$width) {
+	height: $height / 2;
+	width: $width;
+	
+	img {
+		height: 200%;
+		margin-top: -($height/ 4);
+	}
+}
+
+@mixin large-project($height,$width) {
+	height: $height;
+	width: $width;
+}
+
+.project-layout-empty {
+	.project {
+		background-color: $gray-lighter;
+	}
+}
+
+.csstransitions {
+	
+	.project {
+		//@include opacity(0);
+		
+		&.in {
+			
+		}
+	}
+}
+
+.project-layout {
+	position: relative;
+	float: left;
+	> div {
+		
+	}
+	
+	img {
+		display: block;
+		height: 100%;
+		width: 100%;
+		min-height: 100%;
+		position: absolute;
+		
+		z-index: 1;
+		
+		@include opacity(0);
+		
+		transition: opacity .25s ease-in-out;
+		-moz-transition: opacity .25s ease-in-out;
+		-webkit-transition: opacity .25s ease-in-out;
+		
+		&.bw {
+			@include opacity(1);
+			z-index: 0;
+		}
+	}
+	
+	
+	.project {
+		overflow: hidden;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		
+		bottom: $project-box-margin;
+		right: $project-box-margin;
+		
+		background-color: $gray-lighter;
+		
+		
+		a {
+			color: $white;
+			display: block;
+			position: relative;
+			overflow: hidden;
+			height: 100%;
+			width: 100%;
+			
+			
+			.project-info {
+				@include opacity(1);
+			}
+			&:hover {
+			
+				img {
+					@include opacity(1);
+					&.bw {
+						//@include opacity(0);
+						
+					}
+					
+				}
+			
+				.project-info {
+					@include opacity(0);
+				}
+			}
+		}
+		
+		
+		//text-align: center;
+		//border: 5px solid $blue;
+	}
+	@include project-color($blue);
+	
+	.project-info {
+		text-align: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+		
+		vertical-align: middle;
+		
+		
+		h2, h5 {
+			margin: 0px;
+			
+		}
+		
+		&:before {
+			content: '';
+			width: 1px;
+			margin-left: -1px;
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+		}
+		
+		 > div {
+			 display: inline-block;
+			 vertical-align: middle;
+			 width: 90%;
+		 }
+	}
+	
+	
+	
+}
+
+.project-layout-1 {
+	//width: 50%;
+	//float: left;
+	clear:left;
+	@include large-project($project-box-height,$project-box-width);
+}
+
+.project-layout-2 {
+	
+	@include small-project($project-box-height,$project-box-width);
+	
+	@include project-color($green-lighter);
+}
+
+.project-layout-3 {
+	@include small-project($project-box-height,$project-box-width);
+	@include project-color($blue-darkest);
+}
+
+.project-layout-4 {
+	@include small-wide-project($project-box-height,$project-box-width);
+	
+	@include project-color($blue-lighter);
+}
+
+.project-layout-5 {
+	@include small-wide-project($project-box-height,$project-box-width);
+	clear:left;
+	
+}
+
+.project-layout-6 {
+	@include small-project($project-box-height,$project-box-width);
+	@include project-color($blue-darkest);
+}
+
+.project-layout-7 {
+	@include small-project($project-box-height,$project-box-width);
+	@include project-color($green-lightest);
+}
+
+.project-layout-8 {
+	@include small-project($project-box-height,$project-box-width);
+	clear:left;
+}
+.project-layout-9 {
+	@include small-project($project-box-height,$project-box-width);
+	@include project-color($blue-darkest);
+}
+
+.project-layout-10 {
+	@include large-project($project-box-height,$project-box-width);
+	float: right;
+	@include project-color($blue-lighter);
+}
+
+.project-layout-11 {
+	@include small-wide-project($project-box-height,$project-box-width);
+	@include project-color($green-lighter);
+}
+
+
+
+@media (max-width: $screen-sm-min) {
+	.portfolio {
+		#main {
+			padding-right: floor($grid-gutter-width / 2);
+		}
+	}
+
+	.project-fields {
+		display: block;
+		margin-left: 0;
+	}
+
+	.project-layout-1, .project-layout-2,.project-layout-3,.project-layout-4,.project-layout-5,.project-layout-6,.project-layout-7,.project-layout-8,.project-layout-9,.project-layout-10,.project-layout-11 {
+		
+		@include small-wide-project($project-box-height,$project-box-width);
+		
+		float: none;
+		width: 100%;
+		height: auto;
+		
+		margin-bottom: 1em;
+		.project-info {
+			h2 {
+				font-size: 1.8em;
+			}
+			
+		}
+		
+		.project {
+			position: relative;
+			left:auto;
+			top:auto;
+			bottom: auto;
+			right:auto;
+			
+			a {
+				height: auto;
+			}
+		}
+		img {
+			position: relative;
+			height: auto;
+			min-height: 0;
+			
+			&.bw {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+		}
+	}
+
+
+}

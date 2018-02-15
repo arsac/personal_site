@@ -1,0 +1,178 @@
+$front-shadow-color : rgba(darken($blue,20%),.4);
+#main {
+  #hero {
+    //justify-self: flex-start;
+    //align-self: flex-start;
+    flex: 10 0 auto;
+  }
+
+
+}
+
+#hero {
+
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+  @include opacity(0);
+  @include transition(opacity .15s ease-in-out);
+  &.off {
+    &:after {
+      width: 0 !important;
+    }
+  }
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    z-index: -101;
+    background: linear-gradient(to right bottom, $blue 0%, $blue-lighter 100%);
+    @include transition(width .3s,opacity .3s,transform .3s cubic-bezier(0.9, 0.03, 0.07, 0.8));
+    transform: skewX(27deg);
+    transform-origin: top right;
+    z-index: -1;
+    @include opacity(.2);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1000;
+    background: linear-gradient(to right bottom, $blue-darkest 0%, $blue-darker 100%);
+    @include opacity(1);
+    @include transition(opacity .15s ease-in-out);
+
+  }
+}
+
+body {
+  &.home {
+    background-color: $blue-darkest;
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url("../img/bg-portfolio.jpg") no-repeat center center fixed;
+      background-size: cover;
+      content: '';
+      @include transition(opacity .15s ease-in-out);
+      @include opacity(0);
+      z-index: -2000;
+    }
+
+    &.in {
+      &:after {
+        @include opacity(1);
+      }
+    }
+
+
+
+
+
+    .page-content {
+
+    }
+
+
+    #main-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    #header {
+
+      &:after {
+        @include box-shadow(1px 1px 3px $front-shadow-color);
+      }
+    }
+
+
+    &.in {
+      #front-info {
+        padding-top: 0;
+      }
+      #hero {
+        @include opacity(1);
+        &:after {
+          width: 75%;
+          //transform: skewX(29deg);
+        }
+        &:before {
+          display: block;
+          @include opacity(.7);
+        }
+      }
+      #main {
+        #front-info {
+          @include transition(color .3s,opacity .3s,transform .3s cubic-bezier(0.9, 0.03, 0.07, 0.8));
+        }
+        &:after {
+
+          @include opacity(.6);
+        }
+      }
+    }
+
+  }
+}
+
+#hero-container {
+  padding: 10rem 0 10rem 0;
+}
+
+
+#front-info {
+  padding-top: 4rem;
+  position: relative;
+  color: $white;
+  text-align: right;
+
+  @include transition(padding-top .3s cubic-bezier(0.9, 0.03, 0.07, 0.8));
+  @include text-shadow(1px 1px 1px $front-shadow-color);
+
+  h1, h3 {
+    margin: 0px;
+
+  }
+
+  h1 {
+    &:before {
+      content: '{';
+    }
+    &:after {
+      content: '}';
+    }
+    font-size: 3.5em;
+
+    display: inline-block;
+    margin-bottom: 15px;
+
+    position: relative;
+   // border-bottom: .2rem dotted $front-shadow-color;
+
+    span {
+      padding-bottom: 2px;
+      display:inline-block;
+      //border-bottom: .2rem dotted $white;
+    }
+  }
+
+  h3 {
+    //font-size: 1.6em;
+    font-family: $header-font-family;
+  }
+}

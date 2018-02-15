@@ -1,0 +1,20 @@
+<svg width="1016px" height="225px" viewBox="0 0 1016 225" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+  <desc>Created with Sketch.</desc>
+  <defs>
+    <linearGradient x1="96.1283266%" y1="74.605306%" x2="11.8996398%" y2="10.3881836%" id="linearGradient-1">
+      <stop stop-color="#3E8CB7" offset="0%"></stop>
+      <stop stop-color="#3D8DB8" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="50%" y1="179.673258%" x2="63.6926839%" y2="0%" id="linearGradient-2">
+      <stop stop-color="#2B617F" offset="0%"></stop>
+      <stop stop-color="#3D8DB8" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Group-2" transform="translate(-201.000000, -872.000000)">
+      <polygon id="Rectangle-4" fill="url(#linearGradient-1)" points="295.481648 921 989.731648 921 989.731648 1096.46094 201 1096.46094"></polygon>
+      <polygon id="Rectangle-4" fill="url(#linearGradient-2)" points="322.481648 872 1216.73165 872 1216.73165 1047.46094 228 1047.46094"></polygon>
+    </g>
+  </g>
+</svg>

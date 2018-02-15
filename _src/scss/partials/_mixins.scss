@@ -1,0 +1,23 @@
+@import "animate";
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+
+
+.bounce {
+	//@include animate(bounceInUp, 1s, .1s);
+	
+}
