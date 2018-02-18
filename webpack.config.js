@@ -114,7 +114,7 @@ module.exports = {
             to: 'img/'
         }]),
         new FaviconsWebpackPlugin({
-            logo: './_src/img/logo.svg?fill=blue',
+            logo: './_src/img/logo-new.svg',
         }),
         new UglifyJSPlugin()
     ]

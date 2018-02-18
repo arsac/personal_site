@@ -219,23 +219,20 @@ body {
 #header {
   z-index: 2;
   &.stuck-middle {
-    //position: absolute;
     &:after {
-
       transform: skewY(0deg) !important;
     }
 
     #header-top {
-      padding-top: 0;
-      padding-bottom: 0;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
     }
 
     #site-title {
       a {
         height: ($target-logo-height / 2);
         width: ($target-logo-width / 2);
-        background-size: ($target-logo-height / 2) ($target-logo-width / 2);
-
+        background-size: ($target-logo-width / 2) ($target-logo-height / 2);
       }
     }
 
@@ -262,6 +259,7 @@ body {
       width: ($target-logo-width - ($target-logo-width / 4 ));
 
       background-size: ($target-logo-width - ($target-logo-width / 4 )) ($target-logo-height - ($target-logo-height / 4));
+      @include opacity(.99);
 
       @include breakpoint(medium) {
         height: $target-logo-height;
@@ -278,13 +276,12 @@ body {
 
     }
   }
-  //position: relative;
+
   .wrapper {
     background: $body-bg;
-    //padding: 1em 0 1rem 0;
   }
+
   &:after {
-    //background: linear-gradient(to right bottom, $blue 0%, $blue 100%);
     @include box-shadow(1px 1px 3px $front-shadow-color);
     background: $white;
     bottom: 0%;
@@ -295,19 +292,10 @@ body {
     position: absolute;
     right: 0;
     transform: skewY(0);
-
     transform-origin: bottom right;
     z-index: -1;
     @include transition(transform .3s cubic-bezier(0.9, 0.03, 0.07, 0.8));
-
   }
-
-
-
-
-  //padding-top: 2em;
-  //padding-bottom: 2em;
-  //background-color: $body-bg;
 
   .links {
 
@@ -328,17 +316,6 @@ body {
     display: inline-block;
   }
 
-  .menu {
-    a {
-      //color: $white;
-    }
-  }
-
-
-  .social {
-    //position: absolute;
-    //display: none;
-  }
 
   h1, h5 {
     margin: 0px;
@@ -359,11 +336,6 @@ body {
   i {
     font-size: 1.3em;
   }
-
-
-
-
-
 }
 
 #page-title {
@@ -381,8 +353,6 @@ body {
   padding: .2em 0;
 }
 
-
-
 .page-header {
   padding-bottom: 0;
   margin: 0 0 1em 0;
@@ -390,13 +360,10 @@ body {
 
   .container {
     padding: 0;
-    //width: $container-md - $grid-gutter-width;
     background: $blue-lightest;
     border-top: 1px dotted $blue-lighter;
     border-bottom: 1px dotted $blue-lighter;
     padding: 1em 0;
-
-    //@extend .text-muted;
     color : $blue;
 
   }
@@ -414,10 +381,6 @@ body {
     flex: none;
   }
 }
-
-
-
-
 
 #footer {
   position: relative;
@@ -455,8 +418,6 @@ body {
     transform-origin: top left;
     z-index: -1;
   }
-
-
 }
 
 #copy {
