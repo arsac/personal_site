@@ -67,6 +67,7 @@ $fa-font-path: "~font-awesome/fonts";
 @include foundation-float-classes;
 @include foundation-visibility-classes;
 @include foundation-sticky;
+@include foundation-responsive-embed;
 
 //@include foundation-flex-classes;
 @import "partials/resume";
@@ -78,7 +79,7 @@ $logo-height: 440rem;
 $logo-width: 620rem;
 
 
-$target-logo-height: 8rem;
+$target-logo-height: 6rem;
 
 $target-logo-width: floor($logo-width * ($target-logo-height / $logo-height));
 
@@ -172,8 +173,12 @@ h5 {
   }
 
   .wrapper {
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    @include breakpoint(medium) {
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+    }
     background: linear-gradient(to bottom, $blue 0%, $blue-lighter 100%);
   }
 
@@ -247,12 +252,23 @@ body {
 
     a {
       display: block;
-      height: $target-logo-height;
-      width: $target-logo-width;
+
       overflow: hidden;
       text-indent: -1000em;
-      background: transparent url('../img/logo-out.svg') no-repeat center center;
+      background: transparent url('../img/logo-new.svg') no-repeat center center;
       background-size: $target-logo-width $target-logo-height;
+
+      height: ($target-logo-height - ($target-logo-height / 4));
+      width: ($target-logo-width - ($target-logo-width / 4 ));
+
+      background-size: ($target-logo-width - ($target-logo-width / 4 )) ($target-logo-height - ($target-logo-height / 4));
+
+      @include breakpoint(medium) {
+        height: $target-logo-height;
+        width: $target-logo-width;
+        background-size: $target-logo-width $target-logo-height;
+      }
+
       @include opacity(1);
       @include transition(opacity .15s ease-in-out);
       @include transition(background-size .3s cubic-bezier(0.9, 0.03, 0.07, 0.8), height .3s cubic-bezier(0.9, 0.03, 0.07, 0.8), width .3s cubic-bezier(0.9, 0.03, 0.07, 0.8));

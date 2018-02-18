@@ -16,17 +16,25 @@
                 <div class="experience-wrapper">
 
 
-                    <div class="grid-x grid-margin-x">
-                        <div class="cell medium-auto">
+                    <div class="experience-heading grid-x grid-margin-x">
+                        <div class="cell small-6 medium-9">
                             <div class="company"><strong>{{ position.company }}</strong></div>
                             <br>
                             <span class="subheader">{{ position.title }}</span>
-                            <p>{{ position.summary }}</p>
-
                         </div>
-                        <div class="cell medium-shrink text-right">
+                        <div class="cell small-6 medium-3 text-right">
                             <span class="location subheader"><i class="fa fa-map-marker"></i>&nbsp;{{ position.location }}</span><br/>
                             <small><em><span class="start-date">{{ position.start_date }}</span> - <span class="end-date">{{ position.end_date }}</span></em></small>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="cell medium-9">
+                            <ul>
+                                {% for highlight in position.summary %}
+                                <li>{{ highlight }}</li>
+                                {% endfor %}
+                            </ul>
+
                         </div>
                     </div>
                 </div>
@@ -42,7 +50,7 @@
             <h3 class="section-title">Stack Highlights</h3>
             <div class="grid-x grid-margin-x">
                 {% for section in include.resume.skills %}
-                <div class="section-body-item cell {% if forloop.last %}medium-shrink{% else %}medium-auto{% endif %}">
+                <div class="section-body-item cell {% if forloop.last %}small-6 medium-shrink{% else %}small-6 medium-auto{% endif %}">
                     <h4 class="skill-section">{{ section[0] }}</h4>
                     <dl class="skills-list">
                         {% for skill in section[1] %}

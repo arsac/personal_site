@@ -131,7 +131,10 @@ body {
 }
 
 #hero-container {
-  padding: 10rem 0 10rem 0;
+  padding: 5rem 0 5rem 0;
+  @include breakpoint(medium) {
+    padding: 10rem 0 10rem 0;
+  }
 }
 
 
@@ -156,10 +159,15 @@ body {
     &:after {
       content: '}';
     }
-    font-size: 3.5em;
+
+    @include breakpoint(medium) {
+      font-size: 3.5em;
+    }
+
 
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: .5rem;
+    white-space: nowrap;
 
     position: relative;
    // border-bottom: .2rem dotted $front-shadow-color;

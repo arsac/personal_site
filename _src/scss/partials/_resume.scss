@@ -1,19 +1,42 @@
 #resume {
 	//@include xy-grid;
+	> div {
+		@include breakpoint(medium) {
+			margin-bottom: .5rem;
+		}
+
+
+	}
+
+	.grid-x {
+		@include breakpoint(small down) {
+			margin-bottom: 0;
+		}
+	}
 	i {
 		color: $blue-darkest;
 	}
 	> .grid-x {
-		margin-bottom: 1rem;
+		//margin-bottom: 1rem;
 	}
 	> * {
 		//@include xy-cell('shrink', false, $grid-column-gutter, 'margin', 'right left', 'medium', false);
 	}
 
 	section {
+		margin-bottom: 1rem;
+		@include breakpoint(medium) {
+			margin-bottom: 0;
+		}
+
 		&:last-of-type {
 			.section-title, .section-body {
-				text-align: right;
+				text-align: left;
+
+				@include breakpoint(medium) {
+
+					text-align: right;
+				}
 
 			}
 
@@ -21,6 +44,10 @@
 		&:first-of-type {
 			.section-title, .section-body {
 				text-align: left;
+				@include breakpoint(small) {
+
+					text-align: left;
+				}
 			}
 		}
 
@@ -140,6 +167,10 @@ $profile-image-width: 10rem;
 	padding: 0 0px 2rem 3rem;
 	position: relative;
 
+	.experience-heading {
+		margin-bottom: .5rem;
+	}
+
 	.company {
 		position: relative;
 		display: inline-block;
@@ -196,7 +227,7 @@ $profile-image-width: 10rem;
 				position: absolute;
 				text-align: center;
 				left: -2.1rem;
-				top: -.5rem;
+				top: -1rem;
 				z-index: 1;
 				line-height: 1.25rem;
 				height: 1.25rem;
@@ -237,6 +268,10 @@ $profile-image-width: 10rem;
 		&:last-of-type {
 			.skill-section {
 				text-align: right;
+				@include breakpoint(small) {
+
+					text-align: left;
+				}
 			}
 		}
 	}
@@ -306,6 +341,27 @@ $profile-image-width: 10rem;
 		ul {
 			li {
 				display: block;
+			}
+		}
+	}
+
+	#resume {
+		section {
+			&:last-of-type {
+				.section-title, .section-body {
+					text-align: left;
+
+				}
+			}
+		}
+	}
+	#skills {
+
+		.section-body-item {
+			&:last-of-type {
+				.skill-section {
+					text-align: left;
+				}
 			}
 		}
 	}

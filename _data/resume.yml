@@ -8,10 +8,10 @@ positions:
     end_date: Present
     company: GRAYBOX
     title: Technical Lead
-    summary: >
-      Worked with the web app development team to meet tight dealines.  Wrote technical specifications and communicated goals to team.
-      Oversaw launch of more than 3 large scale web applications ranging from enterprise level service buses to media
-      marketplaces.
+    summary:
+      - Worked with the web app development team to meet tight dealines.
+      - Wrote technical specifications and communicated goals to team.
+      - Oversaw launch of more than 3 large scale web applications ranging from enterprise level service buses to media marketplaces.
     location: Portland, OR
   - start_date: May 2015
     end_date: Dec 2016
@@ -23,8 +23,8 @@ positions:
     end_date: Jan 2015
     company: The VHF
     title: Lead Developer
-    summary: >
-      Responsible for all in house development with projects ranging from mobile to server side APIs.
+    summary:
+      - Responsible for all in house development with projects ranging from mobile to server side APIs.
     location: Venice, CA
   - start_date: May 2008
     end_date: Jul 2011

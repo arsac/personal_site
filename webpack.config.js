@@ -102,7 +102,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['assets'], { root: path.resolve(__dirname , '..'), verbose: true }),
+        new CleanWebpackPlugin(['assets'], { root: path.resolve(__dirname), verbose: true }),
         extractSass,
         new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
         new HtmlWebpackPlugin({
