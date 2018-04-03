@@ -9,28 +9,38 @@ positions:
     company: GRAYBOX
     title: Technical Lead
     summary:
-      - Worked with the web app development team to meet tight dealines.
-      - Wrote technical specifications and communicated goals to team.
-      - Oversaw launch of more than 3 large scale web applications ranging from enterprise level service buses to media marketplaces.
+      - Wrote technical specifications for large scale distributed systems and executed with team in tight timelines.
+      - Designed and deployed infrastructure in AWS, leveraging CloudFormation to create secure and redundant multi-zone templates.
+      - Overhauled architecture of an internal service bus product to reduce developer support time and insulate from service outages.
+      - Implemented CI/CD workflows with bitbucket pipelines & AWS, interfacing with QA staff to acheive optimal automation.
+      - Developed 2 microservice SPA clients in React/React Native.
+      - Established company code styles as well as git branching & merging processes.
+      - Well versed in both agile and waterfall methodologies.
+      - As lead, mentored and maintained near-shore and on site team members.
+      - Organized developer training sessions for continued learning.
     location: Portland, OR
   - start_date: May 2015
     end_date: Dec 2016
     company: GRAYBOX
-    title: Senior Ruby Developer
-    summary: Ran lead on all ruby based projects.
+    title: Senior Developer
+    summary:
+      - Architected a modular multi-tenant cms platform for small businesses leveraging the Liquid template engine.
+      - Launched a stock media SaaS platform in Rails with queue based asset transcoding and ElasticSearch backed indexing.
+      - Automated several blue-green deployments using Chef, Ansible as well as ElasticBeanstalk.
+      - Improved performance of existing production projects, lowering memory footprints and implementing better caching strategies.
     location: Portland, OR
   - start_date: Jul 2011
     end_date: Jan 2015
     company: The VHF
     title: Lead Developer
     summary:
-      - Responsible for all in house development with projects ranging from mobile to server side APIs.
+      - Developed various projects ranging from ecommerce to mobile apps.
     location: Venice, CA
-  - start_date: May 2008
-    end_date: Jul 2011
-    company: Atout France
-    title: Web Developer
-    location: Beverly Hills, CA
+#  - start_date: May 2008
+#    end_date: Jul 2011
+#    company: Atout France
+#    title: Web Developer
+#    location: Beverly Hills, CA
 educations:
   - end_date: 2007
     degree: BA
@@ -46,20 +56,24 @@ certifications:
   - issuer: 'Amazon'
     title: 'AWS Certified Developer – Associate'
 skills:
-  Backend:
-    - name: Ruby
-      lvl: 10
-    - name: Node JS
-      lvl: 8
-    - name: PHP
-      lvl: 9
-    - name: Python
-      lvl: 7
   Frontend:
     - name: React / React Native
       lvl: 8
     - name: Vue.js
       lvl: 6
+    - name: JQuery
+      lvl: 8
+    - name: Angular JS
+      lvl: 7
+  Backend:
+      - name: Ruby
+        lvl: 9
+      - name: Node JS
+        lvl: 8
+      - name: PHP
+        lvl: 9
+      - name: Python
+        lvl: 7
   DB:
     - name: Postgres
       lvl: 8
@@ -67,13 +81,19 @@ skills:
       lvl: 9
     - name: DynamoDB
       lvl: 7
+    - name: MongoDB
+      lvl: 6
   Ops:
     - name: 'AWS'
       lvl: 9
     - name: 'Docker'
+      lvl: 8
+    - name: 'Nginx'
       lvl: 8
 languages:
   - name: English
     proficiency: Native
   - name: French
     proficiency: Native
+personal_projects:
+  - name: Various slack bots

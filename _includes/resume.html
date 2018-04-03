@@ -18,8 +18,10 @@
 
                     <div class="experience-heading grid-x grid-margin-x">
                         <div class="cell small-6 medium-9">
+                            {% if position.company  %}
                             <div class="company"><strong>{{ position.company }}</strong></div>
                             <br>
+                            {% endif %}
                             <span class="subheader">{{ position.title }}</span>
                         </div>
                         <div class="cell small-6 medium-3 text-right">
