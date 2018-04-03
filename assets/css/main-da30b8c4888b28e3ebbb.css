@@ -5558,8 +5558,11 @@ body.in .page-content:before {
   background-color: #ffffff; }
 #footer p:last-of-type {
     margin-bottom: 0; }
-#footer .footer-bottom {
+#footer .social {
     text-align: center; }
+#footer .footer-bottom {
+    text-align: center;
+    margin-bottom: 3rem; }
 #footer .wrapper {
     background-color: #ffffff;
     padding-top: 2em; }

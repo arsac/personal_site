@@ -1,23 +1,8 @@
 <footer id="footer" class="site-footer h-card">
   <div class="wrapper">
     <div class="grid-container">
-        <div class="grid-x">
-            <data class="u-url" href="{{ "/" | relative_url }}"></data>
-            <div class="cell medium-8">
-                <p>{{ site.description | escape }}</p>
-            </div>
-            <div class="cell medium-4 grid-y align-justify">
-                <div class="cell">
-                    {% include social.html %}
-                </div>
-                <div class="cell">
-                    {% if site.email %}
-                    <a class="email" href="mailto:{{ site.email }}">{{ site.email }}</a>
-                    {% endif %}
-                </div>
-
-            </div>
-        </div>
+        <data class="u-url" href="{{ "/" | relative_url }}"></data>
+        {% include social.html %}
         <div class="footer-bottom">
             <span id="copy">&copy; {{ 'now' | date: '%Y' }} Mailo Arsac</span>
         </div>
