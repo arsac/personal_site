@@ -10,8 +10,9 @@ positions:
     title: Team Lead, Senior Full Stack Engineer
     summary:
       - Led team focused on customer facing platform.
-      - Worked with architecture team to refactor monolithic app into multiple microservices.
-      - Delivered critical new features on tight deadlines.
+      - Developed microservices using Spring Boot and Hibernate.
+      - Refactored crucial elasticsearch queries to boost relevance and improve query time.
+      - Worked with product to deliver critical new features on tight deadlines without compromising code quality.
     location: Vancouver, WA
   - start_date: Dec 2015
     end_date: April 2018
